@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bada Edifica | Proyectos</title>
+    <meta name="description" content="Explora nuestro portafolio de proyectos completados en Barcelona. Electricidad, fontanería, construcción, reformas.">
+    <link rel="stylesheet" href="css/renault-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50 10 90 90 10 90' fill='%23912526'/></svg>">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo/logo-dark.png" alt="BADA EDIFICA" class="logo-img">
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+                <li class="has-mega">
+                    <a href="services.html" class="mega-link">
+                        <span data-i18n="nav.services">Servicios</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-inner">
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.plumbing">Fontanería</h4>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbing">Fontanería Instalaciones</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingDesc">Suministro y saneamiento</span>
+                                </a>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbingRepair">Reparación de Tuberías</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingRepairDesc">Detección y reparación rápida</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.electrical">Electricidad</h4>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electrical">Instalaciones Eléctricas</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalDesc">Sistemas según normativa</span>
+                                </a>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electricalUpgrade">Cuadros Eléctricos</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalUpgradeDesc">Actualización de cuadros</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.construction">Construcción</h4>
+                                <a href="services.html#construction">
+                                    <span class="mega-title">Nueva Construcción</span>
+                                    <span class="mega-desc">Obras nuevas, acondicionamientos</span>
+                                </a>
+                                <a href="services.html#renovation">
+                                    <span class="mega-title">Reformas</span>
+                                    <span class="mega-desc">Remodelaciones y reformas</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.fire">Seguridad Contra Incendios</h4>
+                                <a href="services.html#fire">
+                                    <span class="mega-title">Detección de Incendios</span>
+                                    <span class="mega-desc">Detectores de humo y calor</span>
+                                </a>
+                                <a href="services.html#fire">
+                                    <span class="mega-title">Sistemas de Extinción</span>
+                                    <span class="mega-desc">Rociadores y extinción</span>
+                                </a>
+                            </div>
+                            <div class="mega-cta">
+                                <h4 data-i18n="mega.needHelp">¿Necesita Ayuda?</h4>
+                                <p data-i18n="mega.needHelpDesc">Contáctenos para una consulta gratuita</p>
+                                <a href="contact.html" class="btn btn-primary" data-i18n="mega.getQuote">Cotizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="projects.html" class="active" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.getQuote">Cotizar</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Alternar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <span class="page-label fade-up" data-i18n="pageHeader.projects.label">Proyectos</span>
+            <h1 class="page-title fade-up stagger-1" data-i18n="pageHeader.projects.title">Nuestro Trabajo<br>Habla por Sí Solo</h1>
+            <p class="page-desc fade-up stagger-2" data-i18n="pageHeader.projects.desc">Una colección de proyectos que hemos completado en Barcelona.</p>
+        </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <section class="section section--dark pattern-dots" id="projects">
+        <div class="container">
+            <div class="projects-grid">
+                <div class="project-card fade-up">
+                    <div class="project-image">
+                        <img src="public/images/slide1.jpg" alt="Proyecto 1">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card1.category">Residencial</span>
+                        <h3 class="project-title" data-i18n="projects.card1.title">Reforma de Apartamento</h3>
+                        <p class="project-desc" data-i18n="projects.card1.desc">Reforma completa de un apartamento moderno en el distrito Eixample.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up stagger-1">
+                    <div class="project-image">
+                        <img src="public/images/slide2.jpg" alt="Proyecto 2">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card2.category">Comercial</span>
+                        <h3 class="project-title" data-i18n="projects.card2.title">Acondicionamiento de Oficinas</h3>
+                        <p class="project-desc" data-i18n="projects.card2.desc">Reforma completa de oficinas en el distrito comercial de Barcelona.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up stagger-2">
+                    <div class="project-image">
+                        <img src="public/images/slide3.jpg" alt="Proyecto 3">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card3.category">Seguridad</span>
+                        <h3 class="project-title" data-i18n="projects.card3.title">Instalación de Seguridad</h3>
+                        <p class="project-desc" data-i18n="projects.card3.desc">Sistema completo de detección y extinción para edificio comercial.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up stagger-3">
+                    <div class="project-image">
+                        <img src="public/images/slide4.jpg" alt="Proyecto 4">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card4.category">Residencial</span>
+                        <h3 class="project-title" data-i18n="projects.card4.title">Extensión de Casa</h3>
+                        <p class="project-desc" data-i18n="projects.card4.desc">Extensión estructural de una casa unifamiliar en Gràcia.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up stagger-4">
+                    <div class="project-image">
+                        <img src="public/images/slide5.jpg" alt="Proyecto 5">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card5.category">Electricidad</span>
+                        <h3 class="project-title" data-i18n="projects.card5.title">Actualización Eléctrica</h3>
+                        <p class="project-desc" data-i18n="projects.card5.desc">Actualización de cuadros eléctricos para edificio residencial.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-up stagger-5">
+                    <div class="project-image">
+                        <img src="public/images/slide1.jpg" alt="Proyecto 6">
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category" data-i18n="projects.card6.category">Fontanería</span>
+                        <h3 class="project-title" data-i18n="projects.card6.title">Reforma de Baño</h3>
+                        <p class="project-desc" data-i18n="projects.card6.desc">Reforma completa de baño con fontanería moderna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta pattern-grid">
+        <div class="container">
+            <h2 class="cta-title fade-up" data-i18n="cta.title">¿Listo para Comenzar tu Proyecto?</h2>
+            <p class="cta-desc fade-up stagger-1" data-i18n="cta.desc">Ofrecemos una consulta gratuita y un presupuesto sin compromiso.</p>
+            <div class="cta-buttons fade-up stagger-2">
+                <a href="contact.html" class="btn btn-outline-light" data-i18n="cta.contact">Contáctanos</a>
+                <a href="tel:+34999999999" class="btn btn-primary" data-i18n="cta.call">Llámanos Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="public/logo/logo-white.png" alt="BADA EDIFICA" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Soluciones profesionales de construcción en Barcelona. Un equipo, todos los oficios.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" data-i18n="footer.electrical">Electricidad</a></li>
+                        <li><a href="services.html" data-i18n="footer.plumbing">Fontanería</a></li>
+                        <li><a href="services.html" data-i18n="footer.construction">Construcción</a></li>
+                        <li><a href="services.html" data-i18n="footer.renovation">Reformas</a></li>
+                        <li><a href="services.html" data-i18n="footer.fire">Seguridad Contra Incendios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.company">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="footer.about">Sobre Nosotros</a></li>
+                        <li><a href="projects.html" data-i18n="footer.projects">Proyectos</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contactTitle">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@badaedifica.com" data-i18n="footer.email">info@badaedifica.com</a></li>
+                        <li><a href="https://badaedifica.com" data-i18n="footer.website">badaedifica.com</a></li>
+                        <li data-i18n="footer.location">Barcelona, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span data-i18n="footer.copyright">© 2023-2025 Bada Edifica. Todos los derechos reservados.</span>
+                <span data-i18n="footer.est">Fundada en 2023 · Barcelona</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

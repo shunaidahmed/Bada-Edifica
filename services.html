@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bada Edifica | Servicios</title>
+    <meta name="description" content="Seis áreas de experiencia de Bada Edifica. Electricidad, fontanería, construcción, reformas, seguridad contra incendios. Un equipo, todos los oficios.">
+    <link rel="stylesheet" href="css/renault-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,90 10,90' fill='%23912526'/></svg>">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo/logo-dark.png" alt="BADA EDIFICA" class="logo-img">
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+                <li class="has-mega">
+                    <a href="services.html" class="mega-link active">
+                        <span data-i18n="nav.services">Servicios</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-inner">
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.plumbing">Fontanería</h4>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbing">Fontanería Instalaciones</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingDesc">Suministro y saneamiento</span>
+                                </a>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbingRepair">Reparación de Tuberías</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingRepairDesc">Detección y reparación rápida</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.electrical">Electricidad</h4>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electrical">Instalaciones Eléctricas</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalDesc">Sistemas según normativa</span>
+                                </a>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electricalUpgrade">Cuadros Eléctricos</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalUpgradeDesc">Actualización de cuadros</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.construction">Construcción</h4>
+                                <a href="services.html#construction">
+                                    <span class="mega-title" data-i18n="mega.construction">Nueva Construcción</span>
+                                    <span class="mega-desc" data-i18n="mega.constructionDesc">Obras nuevas, acondicionamientos</span>
+                                </a>
+                                <a href="services.html#renovation">
+                                    <span class="mega-title" data-i18n="mega.renovation">Reformas</span>
+                                    <span class="mega-desc" data-i18n="mega.renovationDesc">Remodelaciones y reformas</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.fire">Seguridad Contra Incendios</h4>
+                                <a href="services.html#fire">
+                                    <span class="mega-title" data-i18n="mega.fireDetection">Detección de Incendios</span>
+                                    <span class="mega-desc" data-i18n="mega.fireDetectionDesc">Detectores de humo y calor</span>
+                                </a>
+                                <a href="services.html#fire">
+                                    <span class="mega-title" data-i18n="mega.fireSuppression">Sistemas de Extinción</span>
+                                    <span class="mega-desc" data-i18n="mega.fireSuppressionDesc">Rociadores y extinción</span>
+                                </a>
+                            </div>
+                            <div class="mega-cta">
+                                <h4 data-i18n="mega.needHelp">¿Necesita Ayuda?</h4>
+                                <p data-i18n="mega.needHelpDesc">Contáctenos para una consulta gratuita</p>
+                                <a href="contact.html" class="btn btn-primary" data-i18n="mega.getQuote">Cotizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="projects.html" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.getQuote">Cotizar</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Alternar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <span class="page-label fade-up" data-i18n="pageHeader.services.label">Servicios</span>
+            <h1 class="page-title fade-up stagger-1" data-i18n="pageHeader.services.title">Un Equipo.<br>Todos los Oficios.</h1>
+            <p class="page-desc fade-up stagger-2" data-i18n="pageHeader.services.desc">Seis áreas de experiencia, todo bajo un mismo techo. No necesita contratar múltiples empresas.</p>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section class="section section--dark pattern-dots" id="services">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-label" data-i18n="services.label">Qué Hacemos</span>
+                <h2 class="section-title" data-i18n="services.title">Seis Áreas de<br>Experiencia</h2>
+                <p class="section-desc" data-i18n="services.desc">Todo gestionado por un solo equipo — para que nunca tenga que tratar con múltiples contratistas.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card-large fade-up" id="electrical">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">01</span>
+                        <h2 class="service-card-title" data-i18n="services.electrical">Electricidad</h2>
+                        <p class="service-card-desc" data-i18n="services.electricalDesc">Sistemas de cableado según normativa vigente, cuadros eléctricos y instalaciones certificadas.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.electricalList1">Instalaciones eléctricas</li>
+                            <li data-i18n="services.electricalList2">Cuadros eléctricos</li>
+                            <li data-i18n="services.electricalList3">Alumbrado</li>
+                            <li data-i18n="services.electricalList4">Certificaciones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-large fade-up stagger-1" id="plumbing">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2v6m0 12v2M2 12h2m16 0h2M4.93 4.93l4.24 4.24m5.66 5.66l4.24 4.24M4.93 19.07l4.24-4.24m5.66-5.66l4.24-4.24"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">02</span>
+                        <h2 class="service-card-title" data-i18n="services.plumbing">Fontanería</h2>
+                        <p class="service-card-desc" data-i18n="services.plumbingDesc">Suministro de agua y saneamiento, reparación de tuberías, detección de fugas.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.plumbingList1">Suministro de agua</li>
+                            <li data-i18n="services.plumbingList2">Saneamiento</li>
+                            <li data-i18n="services.plumbingList3">Reparación tuberías</li>
+                            <li data-i18n="services.plumbingList4">Detección fugas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-large fade-up stagger-2" id="construction">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="8" width="18" height="12" rx="1"/>
+                            <path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">03</span>
+                        <h2 class="service-card-title" data-i18n="services.construction">Construcción</h2>
+                        <p class="service-card-desc" data-i18n="services.constructionDesc">Nuevas construcciones, acondicionamientos, y trabajos estructurales.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.constructionList1">Nuevas construcciones</li>
+                            <li data-i18n="services.constructionList2">Acondicionamientos</li>
+                            <li data-i18n="services.constructionList3">Trabajos estructurales</li>
+                            <li data-i18n="services.constructionList4">Extensiones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-large fade-up stagger-3" id="renovation">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">04</span>
+                        <h2 class="service-card-title" data-i18n="services.renovation">Reformas</h2>
+                        <p class="service-card-desc" data-i18n="services.renovationDesc">Remodelaciones y reformas para hogares y empresas. Transformamos espacios con calidad.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.renovationList1">Reformas hogares</li>
+                            <li data-i18n="services.renovationList2">Reformas comerciales</li>
+                            <li data-i18n="services.renovationList3">Cocinas y baños</li>
+                            <li data-i18n="services.renovationList4">Remodelaciones completas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-large fade-up stagger-4" id="cleanliness">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 6h18M3 12h18M3 18h18"/>
+                            <circle cx="8" cy="6" r="1" fill="currentColor"/>
+                            <circle cx="8" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="8" cy="18" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">05</span>
+                        <h2 class="service-card-title" data-i18n="services.cleanliness">Limpieza</h2>
+                        <p class="service-card-desc" data-i18n="services.cleanlinessDesc">Eliminación de residuos y limpieza post-obra.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.cleanlinessList1">Eliminación residuos</li>
+                            <li data-i18n="services.cleanlinessList2">Limpieza post-obra</li>
+                            <li data-i18n="services.cleanlinessList3">Limpieza sitio</li>
+                            <li data-i18n="services.cleanlinessList4">Reciclaje</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card-large fade-up stagger-5" id="fire">
+                    <div class="service-card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-number">06</span>
+                        <h2 class="service-card-title" data-i18n="services.fire">Seguridad Contra Incendios</h2>
+                        <p class="service-card-desc" data-i18n="services.fireDesc">Detección de incendios, alarmas, y sistemas de extinción.</p>
+                        <ul class="service-list">
+                            <li data-i18n="services.fireList1">Detección incendios</li>
+                            <li data-i18n="services.fireList2">Alarmas</li>
+                            <li data-i18n="services.fireList3">Extinción</li>
+                            <li data-i18n="services.fireList4">Certificaciones seguridad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta pattern-grid">
+        <div class="container">
+            <h2 class="cta-title fade-up" data-i18n="cta.title">¿Listo para Comenzar tu Proyecto?</h2>
+            <p class="cta-desc fade-up stagger-1" data-i18n="cta.desc">Ofrecemos una consulta gratuita y un presupuesto sin compromiso.</p>
+            <div class="cta-buttons fade-up stagger-2">
+                <a href="contact.html" class="btn btn-outline-light" data-i18n="cta.contact">Contáctanos</a>
+                <a href="tel:+34999999999" class="btn btn-primary" data-i18n="cta.call">Llámanos Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="public/logo/logo-white.png" alt="BADA EDIFICA" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Soluciones profesionales de construcción en Barcelona. Un equipo, todos los oficios.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" data-i18n="footer.electrical">Electricidad</a></li>
+                        <li><a href="services.html" data-i18n="footer.plumbing">Fontanería</a></li>
+                        <li><a href="services.html" data-i18n="footer.construction">Construcción</a></li>
+                        <li><a href="services.html" data-i18n="footer.renovation">Reformas</a></li>
+                        <li><a href="services.html" data-i18n="footer.fire">Seguridad Contra Incendios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.company">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="footer.about">Sobre Nosotros</a></li>
+                        <li><a href="projects.html" data-i18n="footer.projects">Proyectos</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contactTitle">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@badaedifica.com" data-i18n="footer.email">info@badaedifica.com</a></li>
+                        <li><a href="https://badaedifica.com" data-i18n="footer.website">badaedifica.com</a></li>
+                        <li data-i18n="footer.location">Barcelona, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span data-i18n="footer.copyright">© 2023-2025 Bada Edifica. Todos los derechos reservados.</span>
+                <span data-i18n="footer.est">Fundada en 2023 · Barcelona</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
