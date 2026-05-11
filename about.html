@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bada Edifica | Sobre Nosotros</title>
+    <meta name="description" content="Conoce Bada Edifica - nuestra historia, valores, misión y visión. Empresa de construcción en Barcelona desde 2023.">
+    <link rel="stylesheet" href="css/renault-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,90 10,90' fill='%23ff0000'/></svg>">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <div id="progressBarTop" class="progress-bar-top"></div>
+    <div id="cursorGlow" class="cursor-glow"></div>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo/logo-dark.png" alt="BADA EDIFICA" class="logo-img">
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html" class="active" data-i18n="nav.about">Sobre Nosotros</a></li>
+                <li class="has-mega">
+                    <a href="services.html" class="mega-link">
+                        <span data-i18n="nav.services">Servicios</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-inner">
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.plumbing">Fontanería</h4>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbing">Fontanería Instalaciones</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingDesc">Suministro y saneamiento</span>
+                                </a>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbingRepair">Reparación de Tuberías</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingRepairDesc">Detección y reparación rápida</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.electrical">Electricidad</h4>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electrical">Instalaciones Eléctricas</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalDesc">Sistemas según normativa</span>
+                                </a>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electricalUpgrade">Cuadros Eléctricos</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalUpgradeDesc">Actualización de cuadros</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.construction">Construcción</h4>
+                                <a href="services.html#construction">
+                                    <span class="mega-title" data-i18n="mega.construction">Nueva Construcción</span>
+                                    <span class="mega-desc" data-i18n="mega.constructionDesc">Obras nuevas, acondicionamientos</span>
+                                </a>
+                                <a href="services.html#renovation">
+                                    <span class="mega-title" data-i18n="mega.renovation">Reformas</span>
+                                    <span class="mega-desc" data-i18n="mega.renovationDesc">Remodelaciones y reformas</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.fire">Seguridad Contra Incendios</h4>
+                                <a href="services.html#fire">
+                                    <span class="mega-title" data-i18n="mega.fireDetection">Detección de Incendios</span>
+                                    <span class="mega-desc" data-i18n="mega.fireDetectionDesc">Detectores de humo y calor</span>
+                                </a>
+                                <a href="services.html#fire">
+                                    <span class="mega-title" data-i18n="mega.fireSuppression">Sistemas de Extinción</span>
+                                    <span class="mega-desc" data-i18n="mega.fireSuppressionDesc">Rociadores y extinción</span>
+                                </a>
+                            </div>
+                            <div class="mega-cta">
+                                <h4 data-i18n="mega.needHelp">¿Necesita Ayuda?</h4>
+                                <p data-i18n="mega.needHelpDesc">Contáctenos para una consulta gratuita</p>
+                                <a href="contact.html" class="btn btn-primary" data-i18n="mega.getQuote">Cotizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="projects.html" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.getQuote">Cotizar</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Alternar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="nav-backdrop" id="navBackdrop"></div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <span class="page-label fade-up" data-i18n="pageHeader.about.label">Sobre Nosotros</span>
+            <h1 class="page-title fade-up stagger-1" data-i18n="pageHeader.about.title">Construido sobre<br>la Confianza</h1>
+            <p class="page-desc fade-up stagger-2" data-i18n="pageHeader.about.desc">Conoce nuestra historia, valores y por qué somos diferentes.</p>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="section section--dark pattern-dots section-reveal" id="story">
+        <div class="container">
+            <div class="story-grid fade-up stagger-4">
+                <div class="story-text fade-up">
+                    <span class="section-label fade-up stagger-1" data-i18n="story.label">Nuestra Historia</span>
+                    <h2 class="section-title fade-up stagger-2" data-i18n="story.title">Construido sobre<br>la Confianza,<br>Entregado con<br>Promesa</h2>
+                    <blockquote class="story-quote fade-up stagger-3" data-i18n="story.quote">"Decidimos construir algo mejor: un equipo, cubriendo todos los oficios, trabajando juntos de principio a fin."</blockquote>
+                    <p class="section-desc fade-up stagger-3" data-i18n="story.desc1">Bada Edifica nació porque vimos un problema común en la industria de la construcción: los clientes eran defraudados por mala comunicación, promesas rotas y demasiados contratistas diferentes que no trabajaban bien juntos.</p>
+                    <p class="section-desc fade-up stagger-3" data-i18n="story.desc2">Comenzamos con proyectos residenciales y comerciales pequeños en Barcelona y rápidamente nos hicimos un nombre por cumplir nuestra palabra.</p>
+                </div>
+                <div class="story-timeline fade-up stagger-1">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year" data-i18n="timeline.founded">2023</span>
+                            <h4 class="timeline-title" data-i18n="timeline.foundedTitle">Fundada</h4>
+                            <p class="timeline-desc" data-i18n="timeline.foundedDesc">Lanzamos en Barcelona con equipo central</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year" data-i18n="timeline.firstProjects">2023</span>
+                            <h4 class="timeline-title" data-i18n="timeline.firstProjectsTitle">Primeros Proyectos</h4>
+                            <p class="timeline-desc" data-i18n="timeline.firstProjectsDesc">Reformas hogares y eléctricas, 5 estrellas</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year" data-i18n="timeline.fireSafety">2024</span>
+                            <h4 class="timeline-title" data-i18n="timeline.fireSafetyTitle">Seguridad Contra Incendios Añadida</h4>
+                            <p class="timeline-desc" data-i18n="timeline.fireSafetyDesc">Certificados para seguridad de vida</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <span class="timeline-year" data-i18n="timeline.growing">2025</span>
+                            <h4 class="timeline-title" data-i18n="timeline.growingTitle">Crecemos</h4>
+                            <p class="timeline-desc" data-i18n="timeline.growingDesc">Proyectos más grandes en Cataluña</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section section--soft pattern-dots section-reveal" id="values">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-label fade-up stagger-1" data-i18n="values.label">Nuestros Valores</span>
+                <h2 class="section-title fade-up stagger-2" data-i18n="values.title">Qué Nos<br>Impulsa</h2>
+            </div>
+            
+            <div class="values-grid fade-up stagger-4">
+                <div class="value-card fade-up">
+                    <span class="value-number">01</span>
+                    <h3 class="value-title" data-i18n="values.v1title">Calidad sin<br>Compromisos</h3>
+                    <p class="value-desc" data-i18n="values.v1desc">No tomamos atajos. Cada material y método se elige para cumplir con un alto estándar.</p>
+                </div>
+                <div class="value-card fade-up stagger-1">
+                    <span class="value-number">02</span>
+                    <h3 class="value-title" data-i18n="values.v2title">Transparencia</h3>
+                    <p class="value-desc" data-i18n="values.v2desc">Cronogramas claros, precios honestos y comunicación abierta durante cada proyecto. Sin sorpresas ocultas.</p>
+                </div>
+                <div class="value-card fade-up stagger-2">
+                    <span class="value-number">03</span>
+                    <h3 class="value-title" data-i18n="values.v3title">Fiabilidad</h3>
+                    <p class="value-desc" data-i18n="values.v3desc">Nos presentamos, terminamos a tiempo y respaldamos nuestro trabajo — en cada proyecto.</p>
+                </div>
+                <div class="value-card fade-up stagger-3">
+                    <span class="value-number">04</span>
+                    <h3 class="value-title" data-i18n="values.v4title">Conocimiento<br>Local</h3>
+                    <p class="value-desc" data-i18n="values.v4desc">Tenemos nuestra sede en Barcelona y entendemos las normativas locales, códigos de construcción y condiciones.</p>
+                </div>
+                <div class="value-card fade-up stagger-4">
+                    <span class="value-number">05</span>
+                    <h3 class="value-title" data-i18n="values.v5title">Seguridad<br>Primero</h3>
+                    <p class="value-desc" data-i18n="values.v5desc">Cada proyecto que gestionamos — grande o pequeño — prioriza la seguridad de trabajadores, residentes y público.</p>
+                </div>
+                <div class="value-card fade-up stagger-5">
+                    <span class="value-number">06</span>
+                    <h3 class="value-title" data-i18n="values.v6title">Siempre<br>Mejorando</h3>
+                    <p class="value-desc" data-i18n="values.v6desc">Somos una empresa joven que sigue invirtiendo en nuestro equipo, nuestra formación y nuestras habilidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision -->
+    <section class="section section--dark pattern-diagonal section-reveal" id="mission">
+        <div class="container">
+            <div class="mission-vision-grid fade-up stagger-4">
+                <div class="mv-card mv-card--light fade-up">
+                    <span class="mv-label fade-up stagger-1" data-i18n="mission.missionLabel">Misión</span>
+                    <h3 class="mv-title fade-up stagger-2" data-i18n="mission.missionTitle">Entregar servicios de construcción en los que la gente pueda confiar genuinamente</h3>
+                    <p class="mv-desc fade-up stagger-3" data-i18n="mission.missionDesc">Terminados a tiempo, dentro del presupuesto y construido para durar. Creemos que el trabajo de calidad y las relaciones honestas no son extras — son lo básico.</p>
+                </div>
+                <div class="mv-card mv-card--dark fade-up stagger-1">
+                    <span class="mv-label fade-up stagger-1" data-i18n="mission.visionLabel">Visión</span>
+                    <h3 class="mv-title fade-up stagger-2" data-i18n="mission.visionTitle">Convertirnos en la empresa de construcción más confiable de Cataluña</h3>
+                    <p class="mv-desc fade-up stagger-3" data-i18n="mission.visionDesc">El primer nombre que propietarios, empresas y promotores piensan cuando necesitan trabajos realizados correctamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta pattern-grid section-reveal">
+        <div class="container">
+            <h2 class="cta-title fade-up" data-i18n="cta.title">¿Listo para Comenzar tu Proyecto?</h2>
+            <p class="cta-desc fade-up stagger-1" data-i18n="cta.desc">Ofrecemos una consulta gratuita y un presupuesto sin compromiso.</p>
+            <div class="cta-buttons fade-up stagger-2">
+                <a href="contact.html" class="btn btn-outline-light" data-i18n="cta.contact">Contáctanos</a>
+                <a href="tel:+34999999999" class="btn btn-primary" data-i18n="cta.call">Llámanos Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="public/logo/logo-white.png" alt="BADA EDIFICA" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Soluciones profesionales de construcción en Barcelona. Un equipo, todos los oficios.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" data-i18n="footer.electrical">Electricidad</a></li>
+                        <li><a href="services.html" data-i18n="footer.plumbing">Fontanería</a></li>
+                        <li><a href="services.html" data-i18n="footer.construction">Construcción</a></li>
+                        <li><a href="services.html" data-i18n="footer.renovation">Reformas</a></li>
+                        <li><a href="services.html" data-i18n="footer.fire">Seguridad Contra Incendios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.company">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="footer.about">Sobre Nosotros</a></li>
+                        <li><a href="projects.html" data-i18n="footer.projects">Proyectos</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contactTitle">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@badaedifica.com" data-i18n="footer.email">info@badaedifica.com</a></li>
+                        <li><a href="https://badaedifica.com" data-i18n="footer.website">badaedifica.com</a></li>
+                        <li data-i18n="footer.location">Barcelona, España</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span data-i18n="footer.copyright">© 2023-2025 Bada Edifica. Todos los derechos reservados.</span>
+                <span data-i18n="footer.est">Fundada en 2023 · Barcelona</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
