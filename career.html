@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bada Edifica | Carreras</title>
+    <meta name="description" content="Únete al equipo de Bada Edifica. Trabaja con nosotros en Barcelona. Construcción, electricidad, fontanería y más.">
+    <link rel="stylesheet" href="css/renault-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/logo/favicon.png">
+    <link rel="apple-touch-icon" href="public/logo/favicon.png">
+    <script src="js/translations.js"></script>
+</head>
+<body>
+    <div id="progressBarTop" class="progress-bar-top"></div>
+    <div id="cursorGlow" class="cursor-glow"></div>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo/logo-dark.png" alt="BADA EDIFICA" class="logo-img" loading="eager">
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Nosotros</a></li>
+                <li class="has-mega">
+                    <a href="services.html" class="mega-link">
+                        <span data-i18n="nav.services">Servicios</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-inner">
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.plumbing">Fontanería</h4>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbing">Fontanería Instalaciones</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingDesc">Suministro y saneamiento</span>
+                                </a>
+                                <a href="services.html#plumbing">
+                                    <span class="mega-title" data-i18n="mega.plumbingRepair">Reparación de Tuberías</span>
+                                    <span class="mega-desc" data-i18n="mega.plumbingRepairDesc">Detección y reparación rápida</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.electrical">Electricidad</h4>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electrical">Instalaciones Eléctricas</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalDesc">Sistemas según normativa</span>
+                                </a>
+                                <a href="services.html#electrical">
+                                    <span class="mega-title" data-i18n="mega.electricalUpgrade">Cuadros Eléctricos</span>
+                                    <span class="mega-desc" data-i18n="mega.electricalUpgradeDesc">Actualización de cuadros</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.construction">Construcción</h4>
+                                <a href="services.html#construction">
+                                    <span class="mega-title">Nueva Construcción</span>
+                                    <span class="mega-desc">Obras nuevas, acondicionamientos</span>
+                                </a>
+                                <a href="services.html#renovation">
+                                    <span class="mega-title">Reformas</span>
+                                    <span class="mega-desc">Remodelaciones y reformas</span>
+                                </a>
+                            </div>
+                            <div class="mega-section">
+                                <h4 data-i18n="mega.fire">Seguridad Contra Incendios</h4>
+                                <a href="services.html#fire">
+                                    <span class="mega-title">Detección de Incendios</span>
+                                    <span class="mega-desc">Detectores de humo y calor</span>
+                                </a>
+                                <a href="services.html#fire">
+                                    <span class="mega-title">Sistemas de Extinción</span>
+                                    <span class="mega-desc">Rociadores y extinción</span>
+                                </a>
+                            </div>
+                            <div class="mega-cta">
+                                <h4 data-i18n="mega.needHelp">¿Necesita Ayuda?</h4>
+                                <p data-i18n="mega.needHelpDesc">Contáctenos para una consulta gratuita</p>
+                                <a href="contact.html" class="btn btn-primary" data-i18n="mega.getQuote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Cotizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="projects.html" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="career.html" class="active" data-i18n="nav.career">Carreras</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.getQuote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Cotizar</a>
+                <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Alternar menú">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="nav-backdrop" id="navBackdrop"></div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <span class="page-label fade-up" data-i18n="pageHeader.career.label">Carreras</span>
+            <h1 class="page-title fade-up stagger-1" data-i18n="pageHeader.career.title">Trabaja con<br>Bada Edifica</h1>
+            <p class="page-desc fade-up stagger-2" data-i18n="pageHeader.career.desc">Únete a un equipo apasionado por la construcción de calidad en Barcelona.</p>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="section section-reveal pattern-favicon" id="career-intro" style="background:#fff">
+        <div class="container">
+            <div class="career-intro-wrapper">
+                <div class="career-intro-text fade-up">
+                    <span class="section-label" data-i18n="career.label">Únete al Equipo</span>
+                    <p class="career-intro-desc stagger-1" data-i18n="careerPage.intro">En Bada Edifica, creemos que nuestro equipo es nuestra mayor fortaleza. Buscamos personas talentosas y dedicadas que compartan nuestra pasión por la construcción de calidad y el servicio excepcional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Growth -->
+    <section class="section section--soft pattern-favicon section-reveal" id="career-details">
+        <div class="container">
+            <div class="career-details-grid">
+                <div class="career-detail-card fade-up">
+                    <div class="detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="detail-title" data-i18n="careerPage.culture">Cultura de Trabajo</h3>
+                    <p class="detail-desc" data-i18n="careerPage.cultureDesc">Fomentamos un ambiente de trabajo colaborativo donde cada miembro del equipo es valorado. La comunicación abierta, el respeto mutuo y el compromiso con la excelencia son los pilares de nuestra cultura.</p>
+                </div>
+                <div class="career-detail-card fade-up stagger-1">
+                    <div class="detail-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                    </div>
+                    <h3 class="detail-title" data-i18n="careerPage.growth">Crecimiento Profesional</h3>
+                    <p class="detail-desc" data-i18n="careerPage.growthDesc">Invertimos en el desarrollo de nuestro equipo. Ofrecemos formación continua, certificaciones y oportunidades para crecer profesionalmente dentro de la empresa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section section-reveal" id="career-values" style="background:#fff">
+        <div class="container">
+            <div class="section-header fade-up">
+                <h2 class="section-title" data-i18n="careerPage.valuesTitle">Lo Que Buscamos</h2>
+            </div>
+            <div class="career-values-grid fade-up stagger-1">
+                <div class="career-value-item">
+                    <div class="cv-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span data-i18n="careerPage.value1">Pasión por la construcción y la calidad</span>
+                </div>
+                <div class="career-value-item">
+                    <div class="cv-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span data-i18n="careerPage.value2">Compromiso con la seguridad laboral</span>
+                </div>
+                <div class="career-value-item">
+                    <div class="cv-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span data-i18n="careerPage.value3">Trabajo en equipo y comunicación</span>
+                </div>
+                <div class="career-value-item">
+                    <div class="cv-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span data-i18n="careerPage.value4">Ganas de aprender y crecer</span>
+                </div>
+                <div class="career-value-item">
+                    <div class="cv-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span data-i18n="careerPage.value5">Responsabilidad y honestidad</span>
+                </div>
+            </div>
+            <div class="career-no-jobs fade-up stagger-2">
+                <p data-i18n="careerPage.noJobs">Actualmente no tenemos posiciones abiertas, pero siempre estamos interesados en conocer talento excepcional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section--soft pattern-favicon section-reveal" id="career-cta">
+        <div class="container">
+            <div class="career-final-cta fade-up">
+                <h2 class="section-title" data-i18n="careerPage.ctaTitle">¿Crees que eres el adecuado?</h2>
+                <p class="career-cta-desc" data-i18n="careerPage.ctaDesc">Envíanos tu currículum y cuéntanos por qué te gustaría trabajar con nosotros. Revisamos cada candidatura con atención.</p>
+                <a href="mailto:hr@badaedifica.com?subject=Candidatura%20Bada%20Edifica" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    <span data-i18n="careerPage.ctaBtn">Enviar Currículum</span>
+                </a>
+                <span class="career-email">hr@badaedifica.com</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="public/logo/logo-white.png" alt="BADA EDIFICA" class="footer-logo-img" loading="lazy">
+                    </a>
+                    <p class="footer-desc" data-i18n="footer.desc">Soluciones profesionales de construcción en Barcelona. Un equipo, todos los oficios.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.services">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" data-i18n="footer.electrical">Electricidad</a></li>
+                        <li><a href="services.html" data-i18n="footer.plumbing">Fontanería</a></li>
+                        <li><a href="services.html" data-i18n="footer.construction">Construcción</a></li>
+                        <li><a href="services.html" data-i18n="footer.renovation">Reformas</a></li>
+                        <li><a href="services.html" data-i18n="footer.fire">Seguridad Contra Incendios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.company">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" data-i18n="footer.about">Sobre Nosotros</a></li>
+                        <li><a href="projects.html" data-i18n="footer.projects">Proyectos</a></li>
+                        <li><a href="career.html" data-i18n="nav.career">Carreras</a></li>
+                        <li><a href="contact.html" data-i18n="footer.contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title" data-i18n="footer.contactTitle">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@badaedifica.com" data-i18n="footer.email">info@badaedifica.com</a></li>
+                        <li><a href="tel:+34935593581" data-i18n="footer.phone">+34 935 593 581</a></li>
+                        <li><a href="https://badaedifica.com" data-i18n="footer.website">badaedifica.com</a></li>
+                        <li data-i18n="footer.location">Carrer Alcalde Martínez Ecija 33<br>08917 Badalona<br>Barcelona, Catalonia<br>Spain</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <span data-i18n="footer.copyright">© 2023-2025 Bada Edifica. Todos los derechos reservados.</span>
+                <span data-i18n="footer.est">Fundada en 2023 · Barcelona</span>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/3467776166" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Bada Edifica — Construcción y Reformas en Barcelona
+
+## About
+Bada Edifica is a construction and building company based in Badalona, Barcelona, Spain. Founded in 2023. One team covering all trades: electrical, plumbing, construction, renovations, fire safety, and cleaning.
+
+## Contact
+- Address: Carrer Alcalde Martínez Ecija 33, 08917 Badalona, Barcelona, Catalonia, Spain
+- Phone: +34 935 593 581
+- Email: info@badaedifica.com
+- WhatsApp: +34 677 761 66
+
+## Pages
+- / (Home)
+- /about (About Us)
+- /services (Services)
+- /projects (Projects)
+- /contact (Contact)
+- /career (Careers)
+
+## Services
+- Electrical installations and certifications
+- Plumbing, water supply, and drainage
+- Construction, structural work, and extensions
+- Renovations and remodeling
+- Post-construction cleaning and waste removal
+- Fire safety detection and suppression systems
+
+## Tech Stack
+- Static HTML/CSS/JS website
+- No framework — vanilla frontend
+- Bilingual: Spanish (default) and English
+- Oswald font family
