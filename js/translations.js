@@ -14,7 +14,7 @@ const translations = {
         },
         hero: {
             slide1: {
-                label: 'Fundada en 2023 · Barcelona',
+                label: 'Fundada en 2023 · España',
                 title: 'Construyendo Sueños<br>Con Precisión',
                 desc: 'Un equipo. Todos los oficios. Calidad que perdura.',
                 cta: 'Cotizar Gratis',
@@ -197,7 +197,7 @@ const translations = {
             website: 'badaedifica.com',
             location: 'Carrer Alcalde Martínez Ecija 33<br>08917 Badalona<br>Barcelona, Catalonia<br>Spain',
             copyright: '© 2023-2025 Bada Edifica. Todos los derechos reservados.',
-            est: 'Fundada en 2023 · Barcelona',
+            est: 'Fundada en 2023 · España',
             electrical: 'Electricidad',
             plumbing: 'Fontanería',
             construction: 'Construcción',
@@ -261,7 +261,7 @@ const translations = {
             hoursLabel: 'Horario',
             phoneLabel: 'Teléfono',
             whatsapp: 'WhatsApp',
-            whatsappValue: '+34 677 761 66',
+            whatsappValue: '+34 677 076 166',
             needHelp: '¿Necesita Ayuda?',
             needHelpDesc: 'Contáctenos para una consulta gratuita',
             emailUs: 'Envíenos un Correo',
@@ -313,7 +313,7 @@ const translations = {
         },
         hero: {
             slide1: {
-                label: 'Est. 2023 · Barcelona',
+                label: 'Est. 2023 · Spain',
                 title: 'Building Dreams<br>With Precision',
                 desc: 'One team. All trades. Building quality that lasts.',
                 cta: 'Get Free Quote',
@@ -496,7 +496,7 @@ const translations = {
             website: 'badaedifica.com',
             location: 'Carrer Alcalde Martínez Ecija 33<br>08917 Badalona<br>Barcelona, Catalonia<br>Spain',
             copyright: '© 2023-2025 Bada Edifica. All rights reserved.',
-            est: 'Est. 2023 · Barcelona',
+            est: 'Est. 2023 · Spain',
             electrical: 'Electrical',
             plumbing: 'Plumbing',
             construction: 'Construction',
@@ -560,7 +560,7 @@ const translations = {
             hoursLabel: 'Hours',
             phoneLabel: 'Phone',
             whatsapp: 'WhatsApp',
-            whatsappValue: '+34 677 761 66',
+            whatsappValue: '+34 677 076 166',
             needHelp: 'Need Help?',
             needHelpDesc: 'Contact us for a free consultation',
             emailUs: 'Email Us',
@@ -601,109 +601,154 @@ const translations = {
     }
 };
 
-let currentLang = 'es';
+const SUPPORTED_LANGS = ['es', 'en'];
+const DEFAULT_LANG = 'es';
+const STORAGE_KEY = 'bada-lang';
+
+let currentLang = DEFAULT_LANG;
+
+function getLang() {
+    return currentLang;
+}
+
+function t(path, fallbackLang) {
+    if (!path) return '';
+    const lang = translations[currentLang] ? currentLang : DEFAULT_LANG;
+    const tryLangs = [lang];
+    if (fallbackLang && fallbackLang !== lang) tryLangs.push(fallbackLang);
+    if (!tryLangs.includes(DEFAULT_LANG)) tryLangs.push(DEFAULT_LANG);
+
+    for (const l of tryLangs) {
+        const keys = path.split('.');
+        let result = translations[l];
+        let found = true;
+        for (const key of keys) {
+            if (result && typeof result === 'object' && key in result) {
+                result = result[key];
+            } else {
+                found = false;
+                break;
+            }
+        }
+        if (found && typeof result === 'string') return result;
+    }
+    return '';
+}
 
 function setLanguage(lang) {
-    if (!translations[lang]) return;
+    if (!translations[lang]) lang = DEFAULT_LANG;
     currentLang = lang;
-    localStorage.setItem('bada-lang', lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    document.documentElement.setAttribute('lang', lang);
     applyTranslations();
     updateLangButton();
+    document.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
 }
 
-function t(path) {
-    const keys = path.split('.');
-    let result = translations[currentLang];
-    for (const key of keys) {
-        if (result && typeof result === 'object' && key in result) {
-            result = result[key];
-        } else {
-            return '';
-        }
-    }
-    return typeof result === 'string' ? result : '';
-}
+function applyToElement(el, text) {
+    if (!text) return;
+    const tag = el.tagName;
+    const useHtml = el.hasAttribute('data-i18n-html') || /<[a-z][\s\S]*>/i.test(text);
 
-function applyTranslations() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (!key) return;
-        const text = t(key);
-        if (!text) return;
-
-        const tag = el.tagName;
-        if (tag === 'INPUT' && el.type === 'submit') {
+    if (tag === 'INPUT') {
+        if (el.type === 'submit' || el.type === 'button') {
             el.value = text;
-        } else if (tag === 'INPUT' || tag === 'TEXTAREA') {
-            if (el.hasAttribute('placeholder')) {
-                el.placeholder = text;
-            }
-        } else if (tag === 'OPTION') {
-            el.textContent = text;
-        } else if (tag === 'META') {
-            el.content = text;
+        } else if (el.hasAttribute('placeholder')) {
+            el.placeholder = text;
+        }
+    } else if (tag === 'TEXTAREA') {
+        if (el.hasAttribute('placeholder')) el.placeholder = text;
+    } else if (tag === 'OPTION') {
+        el.textContent = text;
+    } else if (tag === 'META') {
+        el.content = text;
+    } else if (tag === 'IMG') {
+        el.alt = text;
+    } else if (tag === 'TITLE') {
+        el.textContent = text;
+        document.title = text;
+    } else {
+        if (useHtml) {
+            el.innerHTML = text;
         } else {
-            if (text.includes('<')) {
-                el.innerHTML = text;
+            const iconChild = el.querySelector(':scope > svg, :scope > i, :scope > .icon');
+            if (iconChild) {
+                let textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+                if (!textNode) {
+                    textNode = document.createTextNode('');
+                    el.appendChild(textNode);
+                }
+                textNode.textContent = ' ' + text;
             } else {
                 el.textContent = text;
             }
         }
+    }
+}
+
+function applyTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.tagName === 'OPTION') return;
+        const key = el.getAttribute('data-i18n');
+        applyToElement(el, t(key));
     });
 
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (!key) return;
-        const text = t(key);
-        if (text) el.placeholder = text;
-    });
-
-    document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
-        const key = el.getAttribute('data-i18n-aria-label');
-        if (!key) return;
-        const text = t(key);
-        if (text) el.setAttribute('aria-label', text);
-    });
-
-    document.querySelectorAll('[data-i18n-title]').forEach(el => {
-        const key = el.getAttribute('data-i18n-title');
-        if (!key) return;
-        const text = t(key);
-        if (text) el.title = text;
-    });
-
-    document.querySelectorAll('select[data-i18n]').forEach(select => {
+    document.querySelectorAll('select').forEach(select => {
         const selectedIndex = select.selectedIndex;
         select.querySelectorAll('option[data-i18n]').forEach(opt => {
-            const optKey = opt.getAttribute('data-i18n');
-            if (!optKey) return;
-            const optText = t(optKey);
+            const optText = t(opt.getAttribute('data-i18n'));
             if (optText) opt.textContent = optText;
         });
         if (selectedIndex >= 0) select.selectedIndex = selectedIndex;
+    });
+
+    const attrMap = {
+        'data-i18n-placeholder': 'placeholder',
+        'data-i18n-aria-label': 'aria-label',
+        'data-i18n-title': 'title',
+        'data-i18n-alt': 'alt',
+        'data-i18n-value': 'value',
+        'data-i18n-content': 'content'
+    };
+    Object.keys(attrMap).forEach(dataAttr => {
+        document.querySelectorAll('[' + dataAttr + ']').forEach(el => {
+            const text = t(el.getAttribute(dataAttr));
+            if (text) el.setAttribute(attrMap[dataAttr], text);
+        });
     });
 }
 
 function updateLangButton() {
     const btn = document.getElementById('langToggle');
-    if (btn) {
-        btn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    if (!btn) return;
+    const target = currentLang === 'es' ? 'EN' : 'ES';
+    const labelNode = btn.querySelector('.lang-label');
+    if (labelNode) {
+        labelNode.textContent = target;
+    } else {
+        btn.textContent = target;
     }
+    btn.setAttribute('aria-label', currentLang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+}
+
+function detectInitialLang() {
+    let saved = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+    if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+    const nav = (navigator.language || navigator.userLanguage || DEFAULT_LANG).slice(0, 2).toLowerCase();
+    return SUPPORTED_LANGS.includes(nav) ? nav : DEFAULT_LANG;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('bada-lang') || 'es';
-    if (translations[savedLang]) {
-        setLanguage(savedLang);
-    } else {
-        setLanguage('es');
-    }
+    setLanguage(detectInitialLang());
 
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'es' ? 'en' : 'es';
-            setLanguage(newLang);
+        langToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
         });
     }
 });
+
+window.BadaI18n = { t, setLanguage, getLang, applyTranslations };

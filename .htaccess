@@ -1,0 +1,148 @@
+# Bada Edifica - Apache / cPanel shared hosting config
+# Clean URLs + cache + security headers
+
+# cPanel hosts often disable FollowSymLinks — use SymLinksIfOwnerMatch
+Options -MultiViews -Indexes +SymLinksIfOwnerMatch
+
+DirectoryIndex index.html
+
+AddDefaultCharset UTF-8
+
+ServerSignature Off
+
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (uncomment in production once SSL is installed via cPanel AutoSSL)
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force non-www (uncomment + edit domain)
+# RewriteCond %{HTTP_HOST} ^www\.badaedifica\.com$ [NC]
+# RewriteRule ^(.*)$ https://badaedifica.com/$1 [L,R=301]
+
+# Redirect /index or /index.html -> /
+RewriteCond %{THE_REQUEST} \s/+(?:index)(?:\.html)?[\s?] [NC]
+RewriteRule ^ / [L,R=301]
+
+# Redirect /page.html -> /page
+RewriteCond %{THE_REQUEST} \s/+([^\s]+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# Internally serve /page as /page.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^.]+?)/?$ $1.html [L]
+
+# Custom error pages
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+
+# Caching — long lived for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault                          "access plus 1 month"
+    ExpiresByType text/html                 "access plus 1 hour"
+    ExpiresByType text/css                  "access plus 30 days"
+    ExpiresByType application/javascript    "access plus 30 days"
+    ExpiresByType text/javascript           "access plus 30 days"
+    ExpiresByType image/jpeg                "access plus 90 days"
+    ExpiresByType image/png                 "access plus 90 days"
+    ExpiresByType image/gif                 "access plus 90 days"
+    ExpiresByType image/webp                "access plus 90 days"
+    ExpiresByType image/svg+xml             "access plus 90 days"
+    ExpiresByType image/x-icon              "access plus 1 year"
+    ExpiresByType font/woff                 "access plus 1 year"
+    ExpiresByType font/woff2                "access plus 1 year"
+    ExpiresByType application/font-woff     "access plus 1 year"
+    ExpiresByType application/font-woff2    "access plus 1 year"
+</IfModule>
+
+# Cache-Control fallback
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=2592000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# Compression — gzip
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# Brotli (cPanel LiteSpeed / Apache 2.4+ with mod_brotli)
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+    Header unset Server
+    Header unset X-Powered-By
+    # Enable HSTS once HTTPS is fully working
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# CORS for fonts (in case CDN serves)
+<IfModule mod_headers.c>
+    <FilesMatch "\.(woff|woff2|ttf|eot|otf|svg)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# Hotlink protection (uncomment + edit domain)
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?badaedifica\.com [NC]
+# RewriteRule \.(jpe?g|png|gif|webp|svg)$ - [F,NC,L]
+
+# Block access to dotfiles (.git, .htaccess, .env, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Block access to common sensitive files
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
+    Require all denied
+</FilesMatch>
+
+# Disable script execution in uploads (defense-in-depth)
+<Directory "public">
+    Options -ExecCGI
+    RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .pl .py .jsp .asp .aspx .shtml
+    RemoveType .php .phtml .php3 .php4 .php5 .php7 .pl .py .jsp .asp .aspx .shtml
+</Directory>
+
+# Correct MIME types (cPanel sometimes misses these)
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/svg+xml .svg
+    AddType image/webp .webp
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType image/x-icon .ico
+    AddType text/plain .txt
+</IfModule>
