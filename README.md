@@ -26,7 +26,7 @@ Sitio web corporativo de Bada Edifica, empresa de construcción y edificación c
 ├── contact.html        # Contacto + Mapa
 ├── career.html         # Carreras / Trabaja con nosotros
 ├── css/
-│   └── renault-style.css  # Único archivo de estilos
+│   └── styles.css  # Único archivo de estilos
 ├── js/
 │   ├── translations.js    # Motor de traducciones ES/EN
 │   └── main.js            # Animaciones, scroll, interactividad
@@ -41,7 +41,7 @@ Sitio web corporativo de Bada Edifica, empresa de construcción y edificación c
 
 ## Características
 
-- **Diseño Renault-inspired**: Blanco/negro con rojo (#ff0000) como acento principal
+- **Diseño Moderno**: Blanco/negro con rojo (#ff0000) como acento principal
 - **Animaciones**: Scroll reveal, parallax, ripple effect, cursor glow, progress bar
 - **WhatsApp flotante**: Botón fijo con enlace directo a WhatsApp
 - **Mapa interactivo**: Sección de mapa OpenStreetMap en la página de contacto
@@ -69,5 +69,5 @@ python3 -m http.server 8000
 
 - Teléfono: +34 935 593 581
 - Email: info@badaedifica.com
-- WhatsApp: +34 677 761 66
+- WhatsApp: +34 677 076 166
 - Dirección: Carrer Alcalde Martínez Ecija 33, 08917 Badalona, Barcelona, Spain
